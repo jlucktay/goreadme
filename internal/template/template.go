@@ -42,7 +42,7 @@ var base = template.New("base").Funcs(
 
 var main = template.Must(base.Parse(`# {{.Package.Name}}
 
-{{if .Config.Badges.TravicCI -}}
+{{if .Config.Badges.TravisCI -}}
 [![Build Status](https://travis-ci.org/{{fullName .Package}}.svg?branch=master)](https://travis-ci.org/{{fullName .Package}})
 {{end -}}
 {{if .Config.Badges.CodeCov -}}
@@ -97,7 +97,7 @@ var functions = template.Must(base.Parse(`
 {{ end }}
 `))
 
-var exmaples = template.Must(base.Parse(`
+var examples = template.Must(base.Parse(`
 {{ define "examples" }}
 {{ if . }}
 
